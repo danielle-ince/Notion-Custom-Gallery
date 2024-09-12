@@ -1,0 +1,58 @@
+<!-- served from your routes in server.js -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Notion internal integration example" />
+
+    <title>Notion integration demo</title>
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+
+    <!-- import the webpage's client-side javascript file -->
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script src="/client.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Notion internal integration demo</h1>
+    </header>
+
+    <main>
+
+      <div class="container">
+        <div  class="wrapper">
+
+          <div class="grid" data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 220, "gutter": 20 }'>
+            <div class="grid-item loading"></div>
+            <div class="grid-item loading grid-item--width2 grid-item--height2"></div>
+            <div class="grid-item loading grid-item--height3"></div>
+            <div class="grid-item loading grid-item--height2"></div>
+            <div class="grid-item loading grid-item--width3"></div>
+            <div class="grid-item loading"></div>
+            <div class="grid-item loading"></div>
+            <div class="grid-item loading grid-item--height2"></div>
+            <div class="grid-item loading grid-item--width2 grid-item--height3"></div>
+            <div class="grid-item loading"></div>
+            <div class="grid-item loading grid-item--height2"></div>
+            <div class="grid-item loading"></div>
+            <div class="grid-item loading grid-item--width2 grid-item--height2"></div>
+            <div class="grid-item loading grid-item--width2"></div>
+            <div class="grid-item loading"></div>
+            <div class="grid-item loading grid-item--height2"></div>
+            <div class="grid-item loading"></div>
+            <div class="grid-item loading"></div>
+            <div class="grid-item loading grid-item--height3"></div>
+            <div class="grid-item loading grid-item--height2"></div>
+            <div class="grid-item loading"></div>
+            <div class="grid-item loading"></div>
+            <div class="grid-item loading grid-item--height2"></div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </body>
+</html>

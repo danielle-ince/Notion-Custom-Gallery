@@ -1,0 +1,139 @@
+/* this file is loaded by index.html and styles the page */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 2em 1em;
+  line-height: 1.5em;
+}
+
+h1 {
+  color: #7171d1;
+  max-width: calc(100% - 5rem);
+  line-height: 1.1;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  text-align: left;
+}
+
+td {
+  width: 50%;
+  word-break: break-all;
+}
+
+form {
+  background-color: #eee;
+  display: grid;
+  grid-gap: 1em;
+  padding: 1em;
+  max-width: 40ch;
+}
+
+input {
+  border: 1px solid silver;
+  display: block;
+  font-size: 16px;
+  margin-bottom: 10px;
+  padding: 5px;
+  width: 100%;
+}
+
+form input[type="submit"] {
+  background-color: #bbbbf2;
+  border: 2px solid currentColor;
+  border-radius: 0.25em;
+  cursor: pointer;
+  font-size: inherit;
+  line-height: 1.4em;
+  padding: 0.25em 1em;
+  max-width: 20ch;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+form input[type="submit"]:hover {
+  background-color: #9292d3;
+}
+
+form input[type="submit"]:active {
+  background-color: #b2b2d5;
+}
+
+footer {
+  margin-top: 3em;
+  padding-top: 1.5em;
+  border-top: 1px solid lightgrey;
+}
+
+.container {
+  width: 100%;
+}
+
+.wrapper {
+
+}
+
+#data {
+  position: relative;
+  /* display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px; */
+}
+
+.ImageWrapper.loading {
+  background: #ddd;
+  height: 400px;
+}
+
+img {
+  width: 100%;
+  display: inline-block;
+}
+
+
+
+/* ---- grid ---- */
+
+.grid {
+  max-width: 1200px;
+  height: auto !important;
+}
+
+/* clearfix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* ---- grid-item ---- */
+
+.grid-item {
+  width: 220px;
+  height: 250px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  background-image: '';
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
+  -ms-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+
+.loading {
+  background: #ddd;
+  border: 2px solid #ccc;
+}
+
+.grid-item--height2 { height: 300px; }
+.grid-item--height3 { height: 360px; }
+.grid-item--height4 { height: 460px; }
