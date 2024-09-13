@@ -1,6 +1,7 @@
 require("dotenv").config()
 const express = require("express")
 const app = express()
+const path = require('path');
 
 const { Client } = require("@notionhq/client")
 const notion = new Client({ auth: process.env.NOTION_KEY })
@@ -11,23 +12,31 @@ app.use(express.json()) // for parsing application/json
 
 // http://expressjs.com/en/starter/basic-routing.html
 app.get("/", function (request, response) {
-  response.sendFile(__dirname + "/views/index.html");
+  response.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
 })
 
-app.get("/images", async function (request, response) {
-  const pageId = process.env.NOTION_PAGE_ID;
-
-  try {
-    const images = await notion.blocks.children.list({
-      block_id: pageId,
-      page_size: 50,
-    });
-    console.log('get images');
-    response.json({ message: "success!", data: images })
-  } catch (error) {
-    response.json({ message: "error", error })
-  }
+app.get("/images", function (request, response) {
+  response.sendFile(path.join(__dirname, '..', 'views', 'test.html'));
 })
+
+app.get('/about', function (req, res) {
+	res.sendFile(path.join(__dirname, '..', 'views', 'test.html'));
+});
+
+// app.get("/images", async function (request, response) {
+//   const pageId = process.env.NOTION_PAGE_ID;
+//   console.log('get images');
+//   try {
+//     const images = await notion.blocks.children.list({
+//       block_id: pageId,
+//       page_size: 50,
+//     });
+    
+//     response.json({ message: "success!", data: images })
+//   } catch (error) {
+//     response.json({ message: "error", error })
+//   }
+// })
 
 // Create new database. The page ID is set in the environment variables.
 app.post("/databases", async function (request, response) {

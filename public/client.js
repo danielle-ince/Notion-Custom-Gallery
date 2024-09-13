@@ -22,24 +22,31 @@ const commentResponseEl = document.getElementById("commentResponse")
 
 
 const getFiles = async () => {
-  const imagesResponse = await fetch("/images", {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    }
-  });
-  const imagesData = await imagesResponse.json();
-  const results = imagesData.data.results.filter((block) => block.type == "image");
-  const files = results.map((block) => {
-    return block.image.file.url;
-  });
-  return files;
+  console.log('get files')
+  try {
+    const imagesResponse = await fetch("/images", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      }
+    });
+    const imagesData = await imagesResponse.json();
+    const results = imagesData.data.results.filter((block) => block.type == "image");
+    const files = results.map((block) => {
+      return block.image.file.url;
+    });
+    return files;
+  } catch (error) {
+    console.log(error)
+  }
 }
 
 const setUpImages = async function () {
   const dataElement = document.getElementById("data");
   const files = await getFiles();
   const blocks = document.getElementsByClassName("grid-item");
+
+  if (!files) return;
 
   files.forEach((file, i) => {
     // const newImgWrapper = document.createElement("div");
@@ -106,7 +113,7 @@ const positionImages = () => {
   });
 }
 
-setUpImages();
+// setUpImages();
 // positionImages();
 
 

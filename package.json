@@ -2,7 +2,7 @@
   "name": "web-form-with-express-example",
   "version": "1.0.0",
   "description": "Internal Notion intergration demo app using Express.js for a server.",
-  "main": "api/server.js",
+  "main": "server.js",
   "scripts": {
     "start": "node api/server.js"
   },
@@ -13,7 +13,7 @@
     "masonry-layout": "^4.2.2"
   },
   "engines": {
-    "node": "14.x"
+    "node": "20.x"
   },
   "repository": {
     "type": "git",
