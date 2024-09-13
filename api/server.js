@@ -16,11 +16,11 @@ app.get("/", function (request, response) {
 })
 
 app.get("/images", function (request, response) {
-  response.sendFile(path.join(__dirname, '..', 'views', 'index.html'));
+  response.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
 })
 
 app.get('/about', function (req, res) {
-	res.sendFile(path.join(__dirname, '..', 'views', 'index.html'));
+	res.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
 });
 
 // app.get("/images", async function (request, response) {
